@@ -102,6 +102,7 @@ public class MailConfiguration
         from="makimaterials@gmail.com";
         username="makimaterials@gmail.com";
         password="m@k1gmail";
+        /* commit */
 
         System.out.println("javaGMailSender host>>" +host);
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
