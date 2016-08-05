@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAKI for building Materials and Trading s.a.r.l</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mstyle.css">
+</head>
+
+<body ng-app="sampleApp" onload="initMap()">
+
+<!-- ====================================================
+header section -->
+<header class="top-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5 header-logo">
+                <br>
+                <!--  <a href="index.html"><img src="img/logo.png" alt="" class="img-responsive logo"></a>-->
+                <br>
+                <div class="brand_name">
+                    <img src="img/mlogo.png" width="100px" height="80px" class="img-responsive logo">
+                    <a href="index.html">MAKI </a>
+                    <span style="font-size:14px;" > for building Materials and Trading  S.A.R.L.</span>
+                </div>
+
+            </div>
+
+            <div class="col-md-7">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid nav-bar">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a class="menu " href="index.html#home" >Home</a></li>
+                                <li><a class="menu" href="index.html#about">about us</a></li>
+                                <li><a class="menu" href="products.html">products </a></li>
+
+                                <li><a class="menu active" href="Contactus.html"> contact us</a></li>
+                            </ul>
+                        </div><!-- /navbar-collapse -->
+                    </div><!-- / .container-fluid -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header> <!-- end of header area -->
+
+<!-- map section -->
+<section class="api-map" id="contact">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 map" id="map"></div>
+        </div>
+    </div>
+</section><!-- end of map section -->
+
+<!-- contact section starts here -->
+<section class="contact" data-ng-controller="ContactusController as contactusCtrl" >
+    <div class="container">
+        <div class="row">
+            <div class="contact-caption clearfix">
+                <div class="contact-heading text-center">
+                    <h2></h2>
+                </div>
+
+                <div class="col-md-5 contact-info text-left">
+                    <h3>contact information</h3>
+                    <div class="info-detail">
+                       <!-- <ul><li><i class="fa fa-calendar"></i><span>Monday - Friday:</span> 9:30 AM to 6:30 PM</li></ul>-->
+                        <ul><li><i class="fa fa-map-marker"></i><span>Address:</span> Aramoun Building Morjan - Ground floor</li></ul>
+                        <ul><li><i class="fa fa-phone"></i><span>Phone:</span> 00961-5-813010</li></ul>
+                        <ul><li><i class="fa fa-phone"></i><span>Mobile:</span> 00961-78-845683</li></ul>
+                        <ul><li><i class="fa fa-fax"></i><span>Fax:</span> 00961-5-813011</li></ul>
+                        <ul><li><i class="fa fa-archive"></i><span>PO Box:</span> 13-5889-Chouran Beirut-Lebanon</li></ul>
+                        <ul><li><i class="fa fa-envelope"></i><span>Email:</span> info@makiformaterials.com</li></ul>
+                        <ul><li>
+                          <!--  <div id="map_canvas" style="width:500px; height:500px"></div>-->
+                            <div id="map_canvas" style="width:500px; height:500px"></div>
+                          <!--  <div style="overflow:hidden;width:500px;height:500px;resize:none;max-width:100%;">
+                                <div id="gmap-canvas" style="height:100%; width:100%;max-width:100%;">
+                                    <iframe style="height:100%;width:100%;border:0;" frameborder="0"
+                                            src="https://www.google.com/maps/embed/v1/directions?origin=Aramoun,+Mount+Lebanon,+Lebanon&destination=Beirut,+Lebanon&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
+                                </div>
+                                </div>-->
+
+                        </li></ul>
+                    </div>
+                </div>
+
+
+                <div  class="col-md-6 col-md-offset-1 contact-form" id="dvContact">
+                    <h3 id="toastmsg">leave us a message</h3>
+                    <form name="contactForm" ng-submit="sendEmail()" novalidate>
+                        <fieldset ng-disabled="isSaving">
+
+                        <input name="name" type="text" placeholder="Name" required  ng-model="contactEmail.name">
+                        <span ng-show="contactForm.name.$invalid" class="help-block">Your name is required.</span>
+
+
+                            <input name="email" required type="email" placeholder="Email" ng-model="contactEmail.email"/>
+                            <div ng-messages="contactForm.email.$error" class="help-block">
+                                <div ng-message="required">Your email is required</div>
+                                <div ng-message="email">Your email address is invalid</div>
+                            </div>
+
+
+
+
+                        <input class="phone" type="text" placeholder="Phone No:" ng-model="contactEmail.phone">
+
+                        <textarea class="message" name="message" id="message" cols="30" rows="10" placeholder="Message" ng-model="contactEmail.message"></textarea>
+
+
+                        <input class="submit-btn" type="submit" value="SUBMIT"  ng-disabled="contactForm.$invalid">
+
+                           <!-- <md-button class="md-primary md-raised" ng-click="save()">
+                                Alert Dialog
+                            </md-button>-->
+
+
+
+                            </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!-- end of contact section -->
+
+
+<!-- footer starts here -->
+<footer class="footer clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 footer-para">
+
+            </div>
+
+            <div class="col-xs-6 text-right">
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-skype"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- script tags
+============================================================= -->
+<!--<script src="js/jquery-2.1.1.js"></script>-->
+<!--<script type="text/javascript"
+        src="http://maps.google.com/maps/api/js?key=AIzaSyCcU1cxdKQYFUTR_pNIPd1veVCnq1ICAxo">
+</script>-->
+
+<script src="../vendors/jquery/dist/jquery.js"></script>
+
+<script src="js/smoothscroll.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--<script src="js/custom.js"></script>-->
+
+<script src="../vendors/angular/angular.js"></script>
+<script src="../vendors/angular-animate/angular-animate.js"></script>
+
+<script src="../vendors/angular-aria/angular-aria.js"></script>
+
+
+<script src="../vendors/angular-messages/angular-messages.js"></script>
+
+<script src="../vendors/angular-material/angular-material.js"></script>
+
+<script src="../vendors/lodash/lodash.js"></script>
+
+<script src="../vendors/moment/moment.js"></script>
+<!--<script src="../vendors/jquery/dist/jquery.js"></script>-->
+
+
+<script src="../vendors/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="../vendors/restangular/dist/restangular.js"></script>
+
+
+<script src="js/contactus.js"></script>
+<script src="js/contactservice.js"></script>
+
+<script
+        src="https://maps.googleapis.com/maps/api/js?v=1&key=AIzaSyCcU1cxdKQYFUTR_pNIPd1veVCnq1ICAxo">
+</script>
+<!--<script src="js/custom.js"></script>-->
+
+<script>
+    function initMap() {
+        var mapDiv = document.getElementById('map_canvas');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 33.7871098, lng: 35.4869549},
+            zoom: 18
+        });
+        var position = new google.maps.LatLng(33.7871098, 35.4869549);
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title:"This is the place."
+        });
+
+        var contentString = '<div style="color: #0000cc;font-weight: bold">MAKI Store</div>';
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
+
+    }
+
+</script>
+</body>
+</html>
