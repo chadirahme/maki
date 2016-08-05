@@ -101,7 +101,7 @@ public class MailConfiguration
         port=587;
         from="makimaterials@gmail.com";
         username="makimaterials@gmail.com";
-        password="m@k1gmail";
+        password="";
 
         /* commit */
         String x="test";
