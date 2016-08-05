@@ -60,19 +60,19 @@ public class MailConfiguration
         auth=false;
         starttls=true;
         port=587;
-        from="makimaterials@gmail.com";
-        username="makimaterials@gmail.com";
-        password="m@k1gmail";
+        from="";
+        username="";
+        password="";
 
 
-        host="localhost"; //"mail.hinawionline.com";
+        host="localhost"; 
         protocol="smtp";
         auth=false;
         starttls=true;
         port=25;
-        from="info@makiformaterials.com";
-        username="support@makiformaterials.com";//"info@makiformaterials.com";
-        password="supp0rt@mak1";//"1nf0@maki";
+        from="";
+        username="";
+        password="";
 
         System.out.println("host>>" +host);
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
@@ -99,8 +99,8 @@ public class MailConfiguration
         auth=false;
         starttls=true;
         port=587;
-        from="makimaterials@gmail.com";
-        username="makimaterials@gmail.com";
+        from="";
+        username="";
         password="";
 
         /* commit */
